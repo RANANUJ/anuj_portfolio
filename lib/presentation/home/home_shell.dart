@@ -43,6 +43,13 @@ class _HomeShellState extends State<HomeShell> {
       appBar: AppBar(
         title: Text(AppStrings.appTitle),
         actions: <Widget>[
+          IconButton(
+            icon: const Icon(Icons.download_outlined),
+            tooltip: 'Download App',
+            onPressed: () {
+              Navigator.of(context).pushNamed(AppRoutes.download);
+            },
+          ),
           PopupMenuButton<String>(
             onSelected: (String value) {
               final routes = <String, Widget>{

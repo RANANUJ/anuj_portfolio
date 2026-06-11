@@ -154,7 +154,7 @@ class _ContactScreenState extends State<ContactScreen> {
                             );
 
                             // Send email notification
-                            final sent = await NotificationService.sendNotifications(
+                            final sent = await NotificationService.sendContactFormSubmission(
                               name: _nameController.text,
                               email: _emailController.text,
                               message: _messageController.text,
@@ -168,18 +168,18 @@ class _ContactScreenState extends State<ContactScreen> {
                                 ScaffoldMessenger.of(context).showSnackBar(
                                   const SnackBar(
                                     content: Text(
-                                      'Form Submitted',
+                                      '✅ Message sent! Check your email for confirmation',
                                     ),
-                                    duration: Duration(seconds: 3),
+                                    duration: Duration(seconds: 4),
                                   ),
                                 );
                               } else {
                                 ScaffoldMessenger.of(context).showSnackBar(
                                   const SnackBar(
                                     content: Text(
-                                      'Form Submitted',
+                                      '✅ Submitted successfully! Thank you for your message.',
                                     ),
-                                    duration: Duration(seconds: 3),
+                                    duration: Duration(seconds: 4),
                                   ),
                                 );
                               }

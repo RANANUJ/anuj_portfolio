@@ -4,6 +4,7 @@ import '../../presentation/home/home_shell.dart';
 import '../../presentation/onboarding/onboarding_screen.dart';
 import '../../presentation/projects/project_detail_screen.dart';
 import '../../presentation/projects/resume_viewer_screen.dart';
+import '../../presentation/download/download_screen.dart';
 import '../../presentation/splash/splash_screen.dart';
 import '../../data/models/project_model.dart';
 
@@ -13,6 +14,7 @@ class AppRoutes {
   static const String home = '/home';
   static const String projectDetail = '/project-detail';
   static const String resumeViewer = '/resume-viewer';
+  static const String download = '/download';
 
   static Route<dynamic> onGenerateRoute(RouteSettings settings) {
     switch (settings.name) {
@@ -29,6 +31,8 @@ class AppRoutes {
         );
       case resumeViewer:
         return MaterialPageRoute(builder: (_) => const ResumeViewerScreen());
+      case download:
+        return MaterialPageRoute(builder: (_) => const DownloadScreen());
       default:
         return MaterialPageRoute(builder: (_) => const SplashScreen());
     }
